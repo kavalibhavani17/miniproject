@@ -1,0 +1,41 @@
+<div class="modal" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h4 class="modal-title">{{ id ? 'Edit Product' : 'Create Product' }}</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <div class="modal-body">
+
+        <form [formGroup]="productForm" (ngSubmit)="submit()">
+
+          <label>Name</label>
+          <input type="text" class="form-control" formControlName="name">
+
+          <label>Price</label>
+          <input type="number" class="form-control" formControlName="price">
+
+          <label>Discount Price</label>
+          <input type="number" class="form-control" formControlName="discountPrice">
+
+          <label>Description</label>
+          <textarea class="form-control" formControlName="description"></textarea>
+
+          <button class="btn btn-success mt-3" type="submit">
+            Save
+          </button>
+
+        </form>
+
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+

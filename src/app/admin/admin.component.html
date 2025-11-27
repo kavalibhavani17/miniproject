@@ -1,0 +1,130 @@
+<div class="header">
+    <div>
+    <h2><i class="bi bi-gear"></i> Admin Panel</h2>  
+    </div>
+ <div style="margin-left: 65%; display: flex;">
+    <div style="margin-right: 20px;">                                                                                                                                                                                                                                
+    <h5><i class="bi bi-shop"></i> View Store</h5>
+    </div>  
+    <div>
+    <h5><i class="bi bi-box-arrow-right"></i> logout</h5>
+    </div>
+ </div>
+</div>
+<div style="display: flex; margin: 20px; margin-bottom: 30px; ">
+ <h2 style="margin: 10px;"><i class="bi bi-box-seam"></i> Product Management</h2>
+ <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal" style="height: 40px; width: 15%;margin-left: 50%; margin-top: 10px; background-color: blue; color: white; border: 0; border-radius: 5px;" ><i class="bi bi-plus-lg"></i> Add Product</button>
+ <!-- Button to Open the Modal -->
+
+<!-- The Modal -->
+<div class="modal" id="myModal" style="width: 80%; height: 100%;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <form [formGroup]="productForm" (ngSubmit)="submit()" >
+         <h2>Add Product</h2>
+         <div>
+          <label for="">Name *</label>
+          <input type="text" formControlName="name">
+          <br>
+
+          <label for="">Category *</label>
+          <input type="text" formControlName="category">
+           <br>
+
+          <label for="">Description *</label>
+          <input type="textarea" formControlName="description">
+           <br>
+
+          <label for="">Price *</label>
+          <input type="text" formControlName="price">
+           <br>
+
+          <label for="">Discounted price*</label>
+          <input type="text" formControlName="discountPrice">
+           <br>
+          
+          <label for="">Stock</label>
+          <input type="text" formControlName="stock">
+           <br>
+
+          <label for="">image URL</label>
+          <input type="text" formControlName="imageUrl">
+           <br>
+
+          <label for="">brand</label>
+          <input type="text" formControlName="brand">
+           <br>
+
+          <label for="">Delivery charges</label>
+          <input type="text" formControlName="deliveryCharges">
+           <br>
+
+          <label for="">Delivery Days</label>
+          <input type="text" formControlName="deliveryDays">
+           <br>
+
+          <label for="">Rating</label>
+          <input type="text" formControlName="rating">
+           <br>
+
+          <label for="">color</label>
+          <input type="text" formControlName="color">
+           <br>
+
+          <label for="">seller</label>
+          <input type="text" formControlName="seller">
+           <br>
+
+          
+          <input type="submit">
+          
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="container mt-3" style="border: 1px solid rgb(206, 200, 200); border-radius: 5px; padding: 20px;">
+            
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Image</th>
+        <th>Name</th>
+        <th>Category</th>
+        <th>Price</th>
+        <th>Stock</th>
+        <th>Rating</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody >
+      <tr *ngFor="let product of products" >
+        <td><img src="{{product.imageUrl}}" alt="" style="width: 50px; height: 50px; border-radius: 5px;"></td>
+        <td><strong style="font-size: 16px;">{{product.name}}</strong></td>
+        <td>{{product.category}}</td>
+        <td >
+            <p style="color: green; margin-bottom: 0px;">${{product.discountPrice}}</p>
+            <p ><del>{{product.price}}</del></p>
+        </td>
+        <td>{{product.stock}}</td>
+        <td style="color: orange;"><i class="bi bi-star-fill"></i> {{product.rating}}</td>
+        <td class="buttons">
+           <button 
+  class="btn btn-primary"
+  data-bs-toggle="modal" 
+  data-bs-target="#myModal"
+  [routerLink]="['/admin/edit', product._id]">
+  <i class="bi bi-pencil"></i>
+</button>
+
+            <!--<div class=" b1" routerLink="admin/edit"><i class="bi bi-pencil"></i></div>-->
+            <div class=" b2" (click)="deleteProduct(product._id)"><i class="bi bi-trash" ></i></div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+

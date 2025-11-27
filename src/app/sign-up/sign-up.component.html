@@ -1,0 +1,45 @@
+<div class="heading"><i class="bi bi-shop"></i> ShopEase</div>
+<div class="signupbox">
+    <h3 class="signupicon"><i class="bi bi-person-plus"></i> Sign Up</h3>
+    <form [formGroup]="signupForm" (ngSubmit)="submit()">
+  <div class="mb-3 mt-3" >
+    <label for="" class="form-label">Full Name</label>
+    <input type="" class="form-control" id="" placeholder="Enter your full name" name="email" formControlName="name">
+  </div>
+  <div class="mb-3 mt-3">
+    <label for="" class="form-label">Email</label>
+    <input type="" class="form-control" id="" placeholder="Enter your email" name="email" formControlName="email">
+  </div>
+  <div class="mb-3 mt-3">
+    <label for="" class="form-label">Mobile Number</label>
+    <input type="" class="form-control" id="email" placeholder="Enter 10-digit mobile number" name="email" formControlName="mobile">
+  </div>
+  <div class="mb-3">
+    <label for="pwd" class="form-label">Password:</label>
+    <div class="signuppasswordinput">
+      <input type="password" class="form-control" id="pwd" placeholder="Enter password (min 6 characters)" name="pswd" formControlName="password" >
+      <div class="eyebox">
+        <i class="bi bi-eye"></i>   
+      </div>
+    </div>
+  </div>
+  <div class="mb-3">
+    <label for="pwd" class="form-label">Confirm Password</label>
+    <div class="signuppasswordinput">
+      <input type="password" class="form-control" id="pwd" placeholder="Enter password (min 6 characters)" name="pswd" >
+      <div class="eyebox">
+        <i class="bi bi-eye"></i>   
+      </div>
+    </div>
+  </div>
+  <div class="form-check mb-3">
+    <label class="form-check-label">
+      <input class="form-check-input" type="checkbox" name="remember"> I agree to the <a href="">Terms & Conditions</a>
+    
+    </label>
+  </div>
+  <input type="submit" style="margin-top: 15px; margin-bottom: 15px;">
+   <hr>
+   <p style="text-align: center;">Already have an account? <a routerLink="/login">Login</a></p>
+</form>
+</div>

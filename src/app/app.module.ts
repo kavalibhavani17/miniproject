@@ -15,6 +15,7 @@ import { EditProductComponent } from './edit-product/edit-product.component';
 import { CreateProductComponent } from './create-product/create-product.component';
 import { AddProductComponent } from './add-product/add-product.component';
 import { RatingComponent } from './rating/rating.component';
+import { ButtonComponent } from './button/button.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { RatingComponent } from './rating/rating.component';
     EditProductComponent,
     CreateProductComponent,
     AddProductComponent,
-    RatingComponent
+    RatingComponent,
+    ButtonComponent
   ],
   imports: [
     BrowserModule,

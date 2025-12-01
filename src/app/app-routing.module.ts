@@ -9,6 +9,7 @@ import { AdminComponent } from './admin/admin.component';
 import { EditProductComponent } from './edit-product/edit-product.component';
 import { AppGuard } from './app.guard';
 import { AddProductComponent } from './add-product/add-product.component';
+import { RatingComponent } from './rating/rating.component';
 
 
 const routes: Routes = [
@@ -16,7 +17,12 @@ const routes: Routes = [
   {path:'signup', component:SignUpComponent},
   {path:'login', component:LoginPageComponent},
   {path:'forgot', component:ForgotPasswordComponent},
-  {path: 'dashboard',component: DashboardComponent, canActivate:[AppGuard]},
+  {path: 'dashboard',component: DashboardComponent, canActivate:[AppGuard],
+    children:[
+      {path:'rating', component:RatingComponent},
+    ]
+  },
+
   {path:'dashboard/products/:id', component:ProductsComponent},
   {path: 'admin', component:AdminComponent,
     children: [

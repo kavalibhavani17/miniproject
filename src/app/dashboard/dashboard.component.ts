@@ -76,4 +76,8 @@ export class DashboardComponent {
     )
   }
 
+  updateRating(rating:number){
+    alert("new rating is" + rating);
+  }
+
 }

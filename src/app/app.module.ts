@@ -17,6 +17,7 @@ import { AddProductComponent } from './add-product/add-product.component';
 import { RatingComponent } from './rating/rating.component';
 import { ButtonComponent } from './button/button.component';
 import { CastleComponent } from './castle/castle.component';
+import { MicroComponent } from './micro/micro.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { CastleComponent } from './castle/castle.component';
     AddProductComponent,
     RatingComponent,
     ButtonComponent,
-    CastleComponent
+    CastleComponent,
+    MicroComponent
   ],
   imports: [
     BrowserModule,

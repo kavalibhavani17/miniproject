@@ -10,10 +10,12 @@ import { EditProductComponent } from './edit-product/edit-product.component';
 import { AppGuard } from './app.guard';
 import { AddProductComponent } from './add-product/add-product.component';
 import { RatingComponent } from './rating/rating.component';
+import { ButtonComponent } from './button/button.component';
 
 
 const routes: Routes = [
   {path:'', component:LoginPageComponent},
+  {path:'button', component:ButtonComponent},
   {path:'signup', component:SignUpComponent},
   {path:'login', component:LoginPageComponent},
   {path:'forgot', component:ForgotPasswordComponent},

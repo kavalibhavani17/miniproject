@@ -16,6 +16,7 @@ import { CreateProductComponent } from './create-product/create-product.componen
 import { AddProductComponent } from './add-product/add-product.component';
 import { RatingComponent } from './rating/rating.component';
 import { ButtonComponent } from './button/button.component';
+import { CastleComponent } from './castle/castle.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { ButtonComponent } from './button/button.component';
     CreateProductComponent,
     AddProductComponent,
     RatingComponent,
-    ButtonComponent
+    ButtonComponent,
+    CastleComponent
   ],
   imports: [
     BrowserModule,
